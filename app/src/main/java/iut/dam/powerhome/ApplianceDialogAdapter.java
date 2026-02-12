@@ -1,6 +1,7 @@
 package iut.dam.powerhome;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,10 +34,25 @@ public class ApplianceDialogAdapter extends ArrayAdapter<Appliance> {
         TextView nameTV = view.findViewById(R.id.tv_equipement_name);
         TextView referenceTV = view.findViewById(R.id.tv_equipement_reference);
         TextView powerTV = view.findViewById(R.id.tv_equipement_power);
+        View energyIndicator = view.findViewById(R.id.view_energy_indicator);
 
         nameTV.setText(appliance.getName());
         referenceTV.setText("Référence: " + appliance.getReference());
         powerTV.setText("Puissance: " + appliance.getPower() + " W");
+
+        // Déterminer la couleur en fonction de la puissance
+        int power = appliance.getPower();
+        int color;
+
+        if (power < 1000) {
+            color = Color.parseColor("#4CAF50"); // Vert - Faible
+        } else if (power < 2000) {
+            color = Color.parseColor("#FF9800"); // Orange - Moyen
+        } else {
+            color = Color.parseColor("#FF5722"); // Rouge - Élevé
+        }
+
+        energyIndicator.setBackgroundColor(color);
 
         return view;
     }
