@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ilumens</string>
+    <string name="hello">Hola París</string>
+    <string name="lets_go">Vamos</string>
+    <string name="salut_iut_de_paris">Hola IUT de París</string>
+    <string name="let_s_go">Vamos</string>
+    <string name="power_home">ilumens</string>
+    <string name="logo_splash">logo_splash</string>
+    <string name="slogan">Mejor formación para una mejor atención</string>
+
+    <!-- Login Activity Strings -->
+    <string name="toolbar_title">Iniciar sesión</string>
+    <string name="identifiez_vous">Inicia sesión</string>
+    <string name="e_mail">Correo electrónico</string>
+    <string name="mot_de_passe">Contraseña</string>
+    <string name="mot_de_passe_oubli">¿OLVIDASTE TU CONTRASEÑA?</string>
+    <string name="connectez_vous">INICIAR SESIÓN</string>
+    <string name="nouveau_ilumens">¿Nuevo en ilumens?</string>
+    <string name="cree_compte">CREAR UNA CUENTA</string>
+    <string name="ou">O</string>
+    <string name="continuer_avec_facebook">Continuar con Facebook</string>
+    <string name="nouveau_sur_ilumens">¿Nuevo en ilumens?</string>
+    <string name="retour_login">Volver</string>
+
+    <!-- Register Activity Strings -->
+    <string name="toolbar_title_register">Crear una cuenta</string>
+    <string name="inscrivez_vous">Regístrate</string>
+    <string name="nom">Apellido</string>
+    <string name="prenom">Nombre</string>
+    <string name="confirmer_mot_de_passe">Confirmar contraseña</string>
+    <string name="valider_inscription">VALIDAR</string>
+    <string name="deja_compte">¿Ya tienes una cuenta?</string>
+    <string name="se_connecter">INICIAR SESIÓN</string>
+</resources>

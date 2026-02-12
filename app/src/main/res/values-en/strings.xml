@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ilumens</string>
+    <string name="hello">Hello Paris</string>
+    <string name="lets_go">Let’s go</string>
+    <string name="salut_iut_de_paris">Hello IUT of Paris</string>
+    <string name="let_s_go">Let’s go</string>
+    <string name="power_home">ilumens</string>
+    <string name="logo_splash">logo_splash</string>
+    <string name="slogan">Better training for better care</string>
+
+    <!-- Login Activity Strings -->
+    <string name="toolbar_title">Sign in</string>
+    <string name="identifiez_vous">Sign in</string>
+    <string name="e_mail">Email</string>
+    <string name="mot_de_passe">Password</string>
+    <string name="mot_de_passe_oubli">FORGOT PASSWORD?</string>
+    <string name="connectez_vous">SIGN IN</string>
+    <string name="nouveau_ilumens">New to ilumens?</string>
+    <string name="cree_compte">CREATE AN ACCOUNT</string>
+    <string name="ou">OR</string>
+    <string name="continuer_avec_facebook">Continue with Facebook</string>
+    <string name="nouveau_sur_ilumens">New to ilumens?</string>
+    <string name="retour_login">Back</string>
+
+    <!-- Register Activity Strings -->
+    <string name="toolbar_title_register">Create an account</string>
+    <string name="inscrivez_vous">Sign up</string>
+    <string name="nom">Last name</string>
+    <string name="prenom">First name</string>
+    <string name="confirmer_mot_de_passe">Confirm password</string>
+    <string name="valider_inscription">SUBMIT</string>
+    <string name="deja_compte">Already have an account?</string>
+    <string name="se_connecter">SIGN IN</string>
+</resources>
