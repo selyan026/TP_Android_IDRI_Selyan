@@ -1,10 +1,13 @@
 package iut.dam.powerhome;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,9 +40,60 @@ public class HabitatActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Habitat habitat = habitats.get(position);
-                Toast.makeText(HabitatActivity.this, habitat.getResidentName(), Toast.LENGTH_SHORT).show();
+                showHabitatDetailsDialog(habitat);
             }
         });
+    }
+
+    /**
+     * Affiche une boîte de dialogue avec les détails de l'habitat
+     */
+    private void showHabitatDetailsDialog(Habitat habitat) {
+        // Créer le dialogue
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_habitat_details);
+        dialog.getWindow().setLayout(
+                (int) (getResources().getDisplayMetrics().widthPixels * 0.9),
+                (int) (getResources().getDisplayMetrics().heightPixels * 0.7)
+        );
+
+        // Récupérer les vues
+        TextView nomTV = dialog.findViewById(R.id.tv_dialog_nom);
+        TextView prenomTV = dialog.findViewById(R.id.tv_dialog_prenom);
+        TextView surfaceTV = dialog.findViewById(R.id.tv_dialog_surface);
+        TextView etageTV = dialog.findViewById(R.id.tv_dialog_etage);
+        ListView equipementsLV = dialog.findViewById(R.id.lv_dialog_equipements);
+        Button closeBtn = dialog.findViewById(R.id.btn_dialog_close);
+
+        // Séparer le nom complet en nom et prénom
+        String[] nameParts = habitat.getResidentName().split(" ");
+        String prenom = nameParts.length > 0 ? nameParts[0] : "";
+        String nom = nameParts.length > 1 ? nameParts[1] : "";
+
+        // Remplir les données
+        nomTV.setText(nom);
+        prenomTV.setText(prenom);
+        surfaceTV.setText(habitat.getArea() + " m²");
+        etageTV.setText(String.valueOf(habitat.getFloor()));
+
+        // Configurer la liste des équipements
+        ApplianceDialogAdapter applianceAdapter = new ApplianceDialogAdapter(
+                this,
+                habitat.getAppliances()
+        );
+        equipementsLV.setAdapter(applianceAdapter);
+
+        // Configurer le bouton de fermeture
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        // Afficher le dialogue
+        dialog.show();
     }
 
     /**

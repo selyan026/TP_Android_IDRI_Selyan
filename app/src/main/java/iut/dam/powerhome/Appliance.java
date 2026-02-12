@@ -6,44 +6,28 @@ public class Appliance implements Serializable {
     private int id;
     private String name;
     private String reference;
-    private int wattage;
+    private int power;
 
-    public Appliance(int id, String name, String reference, int wattage) {
+    public Appliance(int id, String name, String reference, int power) {
         this.id = id;
         this.name = name;
         this.reference = reference;
-        this.wattage = wattage;
+        this.power = power;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getReference() {
         return reference;
     }
 
-    public void setReference(String reference) {
-        this.reference = reference;
-    }
-
-    public int getWattage() {
-        return wattage;
-    }
-
-    public void setWattage(int wattage) {
-        this.wattage = wattage;
+    public int getPower() {
+        return power;
     }
 }
